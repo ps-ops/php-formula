@@ -1,6 +1,8 @@
 ## php.ng pillar examples
 
 php:
+  # Install PHP version
+  version: "5.4"
   # Use ppa instead the default repository (only Debian family)
   use_ppa: True
   # Set the ppa name (valid only if use_ppa is not none)

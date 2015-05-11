@@ -1,6 +1,6 @@
 {% set version = salt['pillar.get']('php:version', '5.4') %}
 
-{% if grans['os_family'] == "RedHat" %}
+{% if grains['os_family'] == "RedHat" %}
   {% if version == "5.6" %}
 
     epel_release:

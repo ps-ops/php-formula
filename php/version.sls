@@ -8,7 +8,7 @@
 #        - humanname: Webtatic EPEL
 #        - mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
 #        - require_in:
-#          - pkg: php56w
+#          - pkg: php
 
     install_pubkey_webtatic:
       file.managed:
@@ -23,10 +23,11 @@
         - gpgcheck: 1
         - gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
         - require_in:
-          - pkg: php56w
+          - pkg: php
 
-    php56w:
-      pkg.installed: []
+    php:
+      pkg.installed:
+        - name: php56w
 
   {% endif %}
 {% endif %}

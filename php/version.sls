@@ -10,11 +10,17 @@
 #        - require_in:
 #          - pkg: php56w
 
+    install_pubkey_webtatic:
+      file.managed:
+        - name: /etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
+        - source: https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7
+
     webtatic:
       pkgrepo.managed:
         - humanname: Webtatic Repository EL7 - $basesearch
         - mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
-        - key_url: https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7
+        - gpgcheck=1
+        - gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
         - require_in:
           - pkg: php56w
 

@@ -14,6 +14,7 @@
       pkgrepo.managed:
         - humanname: Webtatic Repository EL7 - $basesearch
         - mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
+        - key_url: https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7
         - require_in:
           - pkg: php56w
 

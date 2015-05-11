@@ -14,6 +14,7 @@
       file.managed:
         - name: /etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
         - source: https://mirror.webtatic.com/yum/RPM-GPG-KEY-webtatic-el7
+	- source_hash: md5=6877c97f7aa9982dc1ff2550dbba14f6
 
     webtatic:
       pkgrepo.managed:

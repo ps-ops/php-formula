@@ -3,19 +3,21 @@
 {% if grains['os_family'] == "RedHat" %}
   {% if version == "5.6" %}
 
-    epel_release:
+#    epel_release:
+#      pkgrepo.managed:
+#        - humanname: Webtatic EPEL
+#        - mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
+#        - require_in:
+#          - pkg: php56w
+
+    webtatic:
       pkgrepo.managed:
-        - humanname: PHP 5.6 EPEL
-        - baseurl: https://mirror.webtatic.com/yum/el7/epel-release.rpm
+        - humanname: Webtatic Repository EL7 - $basesearch
+        - mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
         - require_in:
           - pkg: php56w
 
     php56w:
-      pkgrepo.managed:
-        - humanname: PHP 5.6
-        - baseurl: https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-        - require_in:
-          - pkg: php56w
       pkg.installed: []
 
   {% endif %}

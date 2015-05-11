@@ -19,8 +19,8 @@
       pkgrepo.managed:
         - humanname: Webtatic Repository EL7 - $basesearch
         - mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
-        - gpgcheck=1
-        - gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
+        - gpgcheck: 1
+        - gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
         - require_in:
           - pkg: php56w
 

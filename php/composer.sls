@@ -13,11 +13,11 @@ get-composer:
       - pkg: php
 
 install-composer:
-  cmd.wait:
+  cmd.run:
     - name: mv {{ php.temp_dir }}/composer.phar {{ install_file }}
     - onlyif: test -f {{ php.temp_dir }}/composer.phar
     - cwd: {{ php.temp_dir }}
-    - watch:
+    - onchanges:
       - cmd: get-composer
 
 # Get COMPOSER_DEV_WARNING_TIME from the installed composer, and if that time has passed

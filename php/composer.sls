@@ -25,10 +25,10 @@ install-composer:
 # It would be nice if composer had a command line switch to get this, but it doesn't,
 # and so we just grep for it.
 #
-update-composer:
-  cmd.run:
-    - name: "{{ install_file }} selfupdate"
-    - unless: test $(grep --text COMPOSER_DEV_WARNING_TIME {{ install_file }} | egrep '^\s*define' | sed -e 's,[^[:digit:]],,g') \> $(php -r 'echo time();')
-    - cwd: {{ php.temp_dir }}
-    - require:
-      - cmd: install-composer
+#update-composer:
+#  cmd.run:
+#    - name: "{{ install_file }} selfupdate"
+#    - unless: test $(grep --text COMPOSER_DEV_WARNING_TIME {{ install_file }} | egrep '^\s*define' | sed -e 's,[^[:digit:]],,g') \> $(php -r 'echo time();')
+#    - cwd: {{ php.temp_dir }}
+#    - require:
+#      - cmd: install-composer

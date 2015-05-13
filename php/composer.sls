@@ -18,6 +18,8 @@ install-composer:
     - cwd: {{ php.temp_dir }}
     - watch:
       - cmd: get-composer
+    - require:
+      - file: {{ php.temp_dir }}/composer.phar
 
 # Get COMPOSER_DEV_WARNING_TIME from the installed composer, and if that time has passed
 # then it's time to run `composer selfupdate`

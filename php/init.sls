@@ -1,7 +1,7 @@
 {% from "php/map.jinja" import php with context %}
 
 include:
-  - package
+  - php.package
 
 php:
   pkg.installed:

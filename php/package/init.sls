@@ -1,0 +1,4 @@
+include:
+  - redhat
+  - debian
+  - suse

@@ -1,8 +1,5 @@
 {% from "php/map.jinja" import php with context %}
 
-include:
-  - php.package
-
-php:
+php-pdo:
   pkg.installed:
-    - name: {{ php.php_pkg }}
+    - name: {{ php.pdo_pkg }}

@@ -3,3 +3,5 @@
 php-pdo:
   pkg.installed:
     - name: {{ php.pdo_pkg }}
+    - watch_in:
+       - service: php-fpm

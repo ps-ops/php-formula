@@ -4,4 +4,6 @@ php-pdo:
   pkg.installed:
     - name: {{ php.pdo_pkg }}
     - watch_in:
-       - service: php-fpm
+       - service: 
+         - name: php-fpm
+         - init_delay: 1

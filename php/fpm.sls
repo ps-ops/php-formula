@@ -8,7 +8,7 @@ php-fpm:
   service.running:
     - name: {{ php.fpm_service }}
     - enable: True
-    - full_restart: True
+    - init_delay: 1
     - watch:
       - file: /etc/php-fpm.d/*
       - file: /etc/php.ini

@@ -9,7 +9,6 @@ php-fpm:
     - name: {{ php.fpm_service }}
     - enable: True
     - reload: True
-    - init_delay: 1
     - watch:
       - file: /etc/php-fpm.d/*
       - file: /etc/php.ini

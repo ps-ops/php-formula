@@ -1,8 +1,5 @@
 {% from "php/map.jinja" import php with context %}
 
-include:
-  - php.package
-
-php:
+php-xdebug:
   pkg.installed:
-    - name: {{ php.php_pkg }}
+    - name: {{ php.xdebug_pkg }}
